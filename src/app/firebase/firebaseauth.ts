@@ -6,7 +6,7 @@ import { saveUser } from "./firebasefirestore";
 import {  signOut } from "firebase/auth";
 
 export const auth = getAuth(app);
-export default function Signup(email:any, password:any){
+export default function Signup(email:string, password:string){
 
 createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -29,7 +29,7 @@ createUserWithEmailAndPassword(auth, email, password)
 
 
 
-export function SignIn(email:any, password:any){
+export function SignIn(email:string, password:string){
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -52,5 +52,6 @@ signOut(auth).then(() => {
   console.log('logout')
 }).catch((error) => {
   // An error happened.
+  
 });
 }

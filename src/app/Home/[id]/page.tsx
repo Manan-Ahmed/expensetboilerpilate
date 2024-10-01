@@ -76,29 +76,7 @@ async function Update(){
     });
 
 
-// try{
-//     await updateDoc(docRef, {
-//         title: updateExp.title,
-//         amount: updateExp.amount,
-//         category: updateExp.category,
-//         node: updateExp.node,
-//         // uid: currentUser
-//         date: new Date().toISOString
 
-    // import { doc, updateDoc } from "firebase/firestore";
-
-    // const washingtonRef = doc(db, "cities", "DC");
-    
-    // // Set the "capital" field of the city 'DC'
-    // await updateDoc(washingtonRef, {
-    //   capital: true
-    // });
-//     })
-// }
-// catch{
-//     console.log('not');
-    
-// }
 }
 
  
@@ -183,110 +161,6 @@ return(
 )  
 
 }
-// import { useEffect, useState } from "react"
-// import { saveExpense } from "../firebase/firebasefirestore"
-// import Link from "next/link"
-// import { UseAuthContext } from "../context/authcontext"
-// import {  getFirestore, updateDoc } from "firebase/firestore"
-// import { app } from "../firebase/firebaseconfig"
-// import { auth } from "../firebase/firebaseauth"
-// import { useRouter } from "next/navigation";
-// import {doc,  onSnapshot } from "firebase/firestore";
 
-// type ParamType = {
-//     params : {id: string}
-// }
-// export default function Params({param:{id}}){
-//     const {index} = UseAuthContext()!
-
-//     const [title,setTitle] = useState('')
-//     const [amount,setAmount] = useState('')
-//     const [category,setCategory] = useState('')
-//     const [node,setNode] = useState('')
-//     const route = useRouter()
-
-//     const db = getFirestore(app);
-
-
-// useEffect(()=>{
-// const docRef = doc(db,'expense',index)
-
-// const unsubscribe = onSnapshot(docRef, (doc) => {
-//     let data = doc.data()
-//     if(data){
-//       setTitle(data.title || '')
-//       setAmount(data.amount || '')
-//       setCategory(data.category || '')
-//       setNode(data.node || '')
-//     }
-//   });
-//   return(()=>{
-//     unsubscribe()
-//   })
-// },[index])
-
-
-
-
-
-
-
-
-//     const save = ()=>{
-      
-//           edit({title,amount,category,node})     
-//      route.push('./expenselist')
-//     }
-
-
-//     const edit = async(updateExp:any)=>{
-// console.log(updateExp);
-
-// //   const collectionRef = doc(db, "expense", index);
-
-// // await updateDoc(collectionRef, {
-// //      updateExp
-// // })
-
-
-// } 
-
-//     return(
-//         <>
-        
-//            <h1>hello homes</h1>
-// <Link href={'./expenselist'}>ExpenseList</Link>
-
-//            <div>
-//             <input type="text" placeholder="tittle" value={title} onChange={(e)=>{setTitle(e.target.value)}} style={{border: '1px solid black'}} />
-//             <br />
-
-//             <input type="text" name="" id="" value={amount} onChange={(e)=>{setAmount(e.target.value)}} placeholder="price" style={{border: '1px solid black'}}/>
-          
-               
-          
-//            </div>
-// <div>
-//       select your category <select name="" id="" value={category} onChange={(e)=>{setCategory(e.target.value)}} >
-//       <option >check</option>
-
-//     <option >Food</option>
-//     <option >Transpot</option>
-//     <option >Bills</option>
-//     <option >education</option>
-//     <option >investment</option>
-//     <option >Luxuries</option>
-//     <option >others</option>
-
-//     </select>
-
-// </div>
-// <div>
-//     <textarea  placeholder="enter your note" value={node}  onChange={(e)=>{setNode(e.target.value)}}></textarea>
-// </div>
-//       <button onClick={save}>update</button>     
-//         </>
-//     )
-// }
 
 

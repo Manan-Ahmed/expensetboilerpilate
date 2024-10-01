@@ -34,7 +34,7 @@ export default function Chart(){
       datasets: [{
           label: "Categories expense per month",
           data: [],
-          backgroundColor: ["yellow", "orange", "blue", "green", "purple", "pink"],
+          backgroundColor: ["green", "orange", "blue", "yellow", "purple", "pink"],
           borderWidth: 2,
       }]
   });

@@ -3,7 +3,6 @@ import Link from "next/link"
 import { useState } from "react"
 import { SignIn } from "../firebase/firebaseauth"
 import Button from "@mui/material/Button"
-// import Button from "@mui/material/Button"
 
 
 
@@ -12,7 +11,7 @@ export default function Login(){
     const [password,setPassword] = useState('')
     
     
-    const signIn = (email:any,password:any)=>{
+    const signIn = (email:string,password:string)=>{
       SignIn(email,password)
     }
     
@@ -30,9 +29,7 @@ export default function Login(){
     <input type="password" id="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="enter your password" required />
   </div>
 
-  {/* <button onClick={()=>{signIn(email,password)}} 
-  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-    login</button> */}
+ 
   
   <Button onClick={()=>{signIn(email,password)}} variant="contained">login</Button>
   <Link href={'./signup'} style={{color: 'blue',margin: '5px'}}>creat new Account</Link>

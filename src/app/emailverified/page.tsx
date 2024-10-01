@@ -28,35 +28,7 @@ else{
 }
 
 
-// useEffect(()=>{
-// if(realTimeUsers){
-//     realTimeUsers()
-// }
-// })
 
-
-// let realTimeUsers: Unsubscribe;
-// let collectionRef = collection(db,'users')
-
-// let currentUser = auth.currentUser?.uid
-// let condition = where('uid','==',currentUser)
-// let q = query(collectionRef,condition)
-
-// realTimeUsers = onSnapshot(q,(snapshot)=>{
-//   snapshot.docChanges().forEach((change)=>{
-//     if(change.type === 'added'){
-//         //  let user = change.doc.data()
-//         //  user.uid = change.doc.id
-//         console.log(change.doc.data(),'added');
-        
-//     }
-//     if(change.type === 'modified'){
-//        route.push('/home')
-//        console.log(change.type);
-       
-//     }
-//   })
-// })
 
 
 

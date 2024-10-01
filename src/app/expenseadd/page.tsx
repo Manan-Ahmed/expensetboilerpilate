@@ -100,9 +100,7 @@ export default function Homes() {
                 </div> 
         
 
-                {/* <div>
-                    <textarea placeholder="enter your note" value={text} onChange={(e) => { setText(e.target.value) }}></textarea>
-                </div> */}
+               
                 <TextArea
                 style={{height: 120, resize: 'none',marginBottom: '10px' }}
       showCount
@@ -110,12 +108,10 @@ export default function Homes() {
       value={text}
       onChange={(e)=>{setText(e.target.value)}}
       placeholder="enter your node"
-      // style={{ height: 120, resize: 'none' }}
     />
 
 
 
-                {/* <button onClick={save}>save</button> */}
                 <div style={{margin: '5px'}}>
                 <Button onClick={save} color="primary" variant="solid">
             Save

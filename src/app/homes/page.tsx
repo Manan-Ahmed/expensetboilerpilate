@@ -1,7 +1,6 @@
 "use client"
 import { collection, query, where, onSnapshot, DocumentData, Unsubscribe, getDocs, updateDoc, getFirestore } from "firebase/firestore";
-// import { app } from "../../firebase/firebaseconfig";
-// import { auth } from "../../firebase/firebaseauth";
+
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { table } from "console";
@@ -81,7 +80,7 @@ export default function ExpenseList() {
 
   
 
-  const delt = async (id: any) => {
+  const delt = async (id: string) => {
     const db = getFirestore(app);
 
     await deleteDoc(doc(db, "expense", id));
@@ -89,7 +88,7 @@ export default function ExpenseList() {
 
   }
 
-  const update = (id: any) => {
+  const update = (id: string) => {
     route.push(`./Home/${id}`)
 
 
@@ -187,85 +186,7 @@ export default function ExpenseList() {
     
     <AddBtn />
 
-{/* <div style={{border: '1px solid',margin: '30px'}}>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg  min-w-50	min-width: 10rem;" >
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
 
-              <th scope="col" className="px-6 py-3">
-                title
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Category
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Note
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Amount
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Date
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Action
-              </th>
-
-              <th scope="col" className="px-6 py-3">
-                <span className="sr-only">Edit</span>
-              </th>
-              <th scope="col" className="px-6 py-3">
-                <span className="sr-only" >Delete</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-
-
-
-            {
-              expList ?
-                expList.map(({id,title,category,node,amount,date}, ind) => (
-
-                  <tr key={ind} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 ">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      {title}
-                    </th>
-                    <td className="px-6 py-4">{category}</td>
-                    <td className="px-6 py-4">{node}</td>
-                    <td className="px-6 py-4">{amount}</td>
-                    <td className="px-6 py-4">{date} </td>
-
-                    <td className="px-6 py-4 text-right">
-                     
-                        <MdEdit  onClick={() => { update(id) }}/>
-                   
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                    
-                        
-                       
-                        <MdDelete  onClick={() => { delt(id) }} />
-                      
-                    </td>
-                  </tr>
-
-                ))
-                : <div> data not avaolable</div>
-
-
-            }
-
-
-          </tbody>
-        </table>
-      </div>
-      </div> */}
-  
     </>
 
   )

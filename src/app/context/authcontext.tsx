@@ -41,11 +41,12 @@ useEffect(()=>{
     onAuthStateChanged(auth, (logInUser) => {
         
       if (logInUser) {
+        route.push('/homes')
+
         const {email,uid,emailVerified} = logInUser
 setUser({email,uid,emailVerified})
 console.log(emailVerified);
 // if(emailVerified === true){
-  route.push('/homes')
 // }else{
 //   sendEmailVerification(logInUser)
 //   .then(() => {

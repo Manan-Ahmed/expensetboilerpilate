@@ -23,8 +23,14 @@ export async function saveUser(user:UserType){
 
 }
 
+type ExpenseType={
+  title: string,
+  amount: string,
+  category: string,
+  node: string
+}
 
-export async function saveExpense({title,amount,category,node}:any){
+export async function saveExpense({title,amount,category,node}:ExpenseType){
   let collectionRef = collection(db,'expense')
   let uid = auth.currentUser?.uid
  const docRef = await setDoc(doc(collectionRef), {
@@ -58,14 +64,3 @@ let allExp = allExpenseSnapShot.docs.map((expSnapShot)=>{
 
 
 
-// export function UpadateExpDb(updateExp:any){
-
-//   const collectionRef = doc(db, "expense", index);
-
-// await updateDoc(collectionRef, {
-//      updateExp
-// })
-
-
-// } 
-// }
