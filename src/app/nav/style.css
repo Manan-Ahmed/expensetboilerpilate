@@ -1,0 +1,14 @@
+.list{
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar{
+  /* border: 1px solid black; */
+  background-color: #2e8ae5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+}
+
