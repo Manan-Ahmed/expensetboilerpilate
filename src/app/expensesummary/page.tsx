@@ -11,7 +11,7 @@ export default function ExpenseSummary(){
     const db = getFirestore(app);
 
 useEffect(()=>{
-      let detachListner = onAuthStateChanged(auth,(user)=>{
+      const detachListner = onAuthStateChanged(auth,(user)=>{
 if(user){
   fetch()
    

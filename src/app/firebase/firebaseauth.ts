@@ -21,7 +21,8 @@ createUserWithEmailAndPassword(auth, email, password)
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    
+    console.log(errorMessage)
+
     // ..
   });
 }
@@ -40,6 +41,7 @@ export function SignIn(email:string, password:string){
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    console.log(errorMessage)
   });
 }
 
@@ -52,6 +54,6 @@ signOut(auth).then(() => {
   console.log('logout')
 }).catch((error) => {
   // An error happened.
-  
+  console.log(error)
 });
 }

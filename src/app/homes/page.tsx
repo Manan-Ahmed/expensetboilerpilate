@@ -1,25 +1,19 @@
 "use client"
-import { collection, query, where, onSnapshot, DocumentData, Unsubscribe, getDocs, updateDoc, getFirestore } from "firebase/firestore";
+import { collection, query, where, onSnapshot, DocumentData, Unsubscribe, getFirestore } from "firebase/firestore";
 
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { table } from "console";
 import { doc, deleteDoc } from "firebase/firestore";
 
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { app } from "../firebase/firebaseconfig";
 import { auth, LogOut } from "../firebase/firebaseauth";
-import { UseAuthContext } from "../context/authcontext";
 import { MdDelete, MdEdit } from "react-icons/md";
 import AddBtn from "../component/addBtn";
 
 export default function ExpenseList() {
   const [expList, setExpList] = useState<DocumentData[]>([])
-  const [list, setList] = useState<DocumentData>()
-  const { setId } = UseAuthContext()!
   const route = useRouter()
-  const [loading, setLoading] = useState()
 
   const db = getFirestore(app);
 

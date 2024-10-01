@@ -16,7 +16,7 @@ export default function Homes() {
     const [text, setText] = useState('')
 
     const save = () => {
-        let exp = {
+        const exp = {
             title: title,
             amount: amount,
             category: category,
@@ -33,7 +33,6 @@ export default function Homes() {
     return (
         <>
 
-            {/* <Link href={'./expenselist'}>ExpenseList</Link> */}
 
             <h1 style={{textAlign: 'center',padding: '5px',margin: '5px',fontFamily: 'sans-serif'}}>Expense Tracker</h1>
 

@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore,collection, addDoc, getDocs, doc, setDoc, Timestamp, updateDoc } from "firebase/firestore";
+import { getFirestore,collection, getDocs, doc, setDoc } from "firebase/firestore";
 import { app } from "./firebaseconfig";
 import { auth } from "./firebaseauth";
-import {  query, where, onSnapshot } from "firebase/firestore";
+import {  query, where } from "firebase/firestore";
 
 const db = getFirestore(app);
 
@@ -16,7 +16,7 @@ type UserType = {
 
 export async function saveUser(user:UserType){
 
-  let docRef = doc(db,'users',user.uid)
+  const docRef = doc(db,'users',user.uid)
      await setDoc(docRef,{
       user
      })
@@ -31,8 +31,8 @@ type ExpenseType={
 }
 
 export async function saveExpense({title,amount,category,node}:ExpenseType){
-  let collectionRef = collection(db,'expense')
-  let uid = auth.currentUser?.uid
+  const collectionRef = collection(db,'expense')
+  const uid = auth.currentUser?.uid
  const docRef = await setDoc(doc(collectionRef), {
         userUid: uid,date: new Date().toISOString(),title,amount,category,node
 
@@ -43,14 +43,14 @@ export async function saveExpense({title,amount,category,node}:ExpenseType){
 
 
 export async function getExpense(){
-let currentUser = auth.currentUser?.uid
+  const currentUser = auth.currentUser?.uid
 
-let collectionRef = collection(db,'expense')
-let condition = where('userUid','==',currentUser)
+const collectionRef = collection(db,'expense')
+const condition = where('userUid','==',currentUser)
 
-let q = query(collectionRef,condition)
+const q = query(collectionRef,condition)
 
-let allExpenseSnapShot = await getDocs(q)
+const allExpenseSnapShot = await getDocs(q)
 let allExp = allExpenseSnapShot.docs.map((expSnapShot)=>{
          let expense = expSnapShot.data()
          expense.id = expSnapShot.id

@@ -1,16 +1,14 @@
 "use client"
-import { IoIosLogOut, IoMdHome } from 'react-icons/io'
+import {  IoMdHome } from 'react-icons/io'
 import  './style.css'
 import { IoListCircleSharp, IoPieChart } from 'react-icons/io5'
 import Link from 'next/link'
 import { RiLogoutBoxRFill } from 'react-icons/ri'
-import { auth, LogOut } from '../firebase/firebaseauth'
-import { onAuthStateChanged } from 'firebase/auth'
-import { useState } from 'react'
+import { LogOut } from '../firebase/firebaseauth'
+
 
 export default function Navbar(){
  
-    let user = auth.currentUser
     return(
         <>
              

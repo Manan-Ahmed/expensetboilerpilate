@@ -1,9 +1,8 @@
 "use client"
-import { getAuth, onAuthStateChanged, sendEmailVerification, signOut } from "firebase/auth";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { createContext,ReactNode,useContext, useEffect, useState } from "react";
-import { json } from "stream/consumers";
+
 import { app } from "../firebase/firebaseconfig";
 
 
@@ -11,7 +10,6 @@ type userType = {
     email: string | null,
     uid: string,
     emailVerified: boolean |null,
-    // verify: boolean | null
    
 }
 
@@ -46,22 +44,6 @@ useEffect(()=>{
         const {email,uid,emailVerified} = logInUser
 setUser({email,uid,emailVerified})
 console.log(emailVerified);
-// if(emailVerified === true){
-// }else{
-//   sendEmailVerification(logInUser)
-//   .then(() => {
-   
-//     console.log('email sent',logInUser);
-//     route.push('/emailverified')
-
-    
-//   }).catch(()=>{
-// console.log('Email verification not sent');
-
-//   })
-
- 
-// }
 
 
 

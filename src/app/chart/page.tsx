@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import PieChart from "../component/pieChart";
 import { auth } from "../firebase/firebaseauth";
 import { app } from "../firebase/firebaseconfig";
-import BarChart from "../component/BarChart";
 
 // Define an interface for the dataset
 interface Dataset {
@@ -17,13 +16,11 @@ interface Dataset {
     borderWidth: number;
 }
 
-// Define an interface for userData
-interface UserData {
+ interface UserData {
     labels: string[];
     datasets: Dataset[];
 }
 
-// import BarChart from "../component/BarChart"
 
 export default function Chart(){
   const db = getFirestore(app);
@@ -109,21 +106,7 @@ export default function Chart(){
           `}</style>
 
 
-{
-              expneces.length > 0 ? (<div
-                  style={{
-                      width: "90%", // Use percentage width for responsiveness
-                      maxWidth: "90%", // Maximum width to limit large screens
-                      margin: "0 auto", // Center the chart
-                  }}
-              >
-< BarChart charData={userData}/>
-</div>) :
-                  (<Stack style={{ width: "100%", textAlign: "center" }}>
-                      <Button variant="text">No expenses available</Button>
-                  </Stack>
-                  )
-          }
+
       </>
     
     
@@ -131,25 +114,6 @@ export default function Chart(){
 }
 
 
-
-
-
-
-
-
-
-// "use client"
-
-// import BarChart from "../component/BarChart"
-
-// export default function Chart(){
-//     return(
-//         <>
-//            < BarChart/>
-        
-//         </>
-//     )
-// }
 
 
 

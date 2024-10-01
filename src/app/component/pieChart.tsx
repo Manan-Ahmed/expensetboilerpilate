@@ -10,8 +10,7 @@ import {
   Legend
 } from "chart.js";
 import { useEffect, useState } from "react";
-import { getFirestore } from "firebase/firestore";
-import { app } from "../firebase/firebaseconfig";
+
 
 // Register the necessary components
 ChartJS.register(ArcElement, Title, Tooltip, Legend); 
