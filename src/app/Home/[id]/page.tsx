@@ -33,13 +33,6 @@ type ParamType = {
 
 
 
-    type UpadateType = {
-      title: string,
-      amount: string,
-      category:string,
-      node:string
-    }
-    
 
 
 useEffect(()=>{
@@ -61,8 +54,9 @@ const unsubscribe = onSnapshot(docRef, (doc) => {
 
 
 async function Update(){
-  let uid = auth.currentUser?.uid
-    const docRef = doc(db, "expense", id)
+
+const uid = auth.currentUser?.uid
+  const docRef = doc(db, "expense", id)
     console.log();
  
      await updateDoc(docRef, {

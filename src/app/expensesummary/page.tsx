@@ -38,11 +38,11 @@ const fetch = ()=>{
   let summaryClone = [...expSummary]
 
 
-let collectionRef = collection(db, 'expense')
-let currentUser = auth.currentUser?.uid
+const collectionRef = collection(db, 'expense')
+const currentUser = auth.currentUser?.uid
 
 let condition = where('userUid', '==', currentUser)
-let q = query(collectionRef, condition)
+const q = query(collectionRef, condition)
 
 readExpenseRealTime = onSnapshot(q, (snapShot) => {
      snapShot.docChanges().forEach((change)=>{

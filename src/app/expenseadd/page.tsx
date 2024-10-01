@@ -5,7 +5,6 @@
 
 import { useState } from "react"
 import { saveExpense } from "../firebase/firebasefirestore"
-import Link from "next/link"
 import TextArea from "antd/es/input/TextArea"
 import Button from "antd/es/button"
 
