@@ -28,7 +28,7 @@ style={{margin: '0 auto',position: 'relative',top: '140px'}} >
     <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
     <input type="password" id="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="enter your password" required />
   </div>
-  <Button onClick={()=>{signup(email,password)}} variant="contained">login</Button>
+  <Button onClick={()=>{signup(email,password)}} variant="contained">SignUp</Button>
   <Link href={'/login'} style={{color: 'blue',margin: '5px'}}>already have an account login here</Link>
  
 

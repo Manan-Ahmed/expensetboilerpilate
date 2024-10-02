@@ -140,7 +140,6 @@ return(
       value={node}
       onChange={(e)=>{setNode(e.target.value)}}
       placeholder={node}
-      // style={{ height: 120, resize: 'none' }}
     />
 
       

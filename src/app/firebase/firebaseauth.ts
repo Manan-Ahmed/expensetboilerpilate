@@ -10,7 +10,6 @@ export default function Signup(email:string, password:string){
 
 createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed up 
     const user = userCredential.user;
     console.log('user creat',user);
     const {email,uid} = userCredential.user

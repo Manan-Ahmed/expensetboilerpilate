@@ -47,11 +47,11 @@ export default function Chart(){
   }, []);
 
   const fetchExpences = () => {
-    let collectionRef = collection(db, 'expense')
-    let currentUser = auth.currentUser?.uid
+    const collectionRef = collection(db, 'expense')
+    const currentUser = auth.currentUser?.uid
 
-    let condition = where('userUid', '==', currentUser)
-    let q = query(collectionRef, condition)
+    const condition = where('userUid', '==', currentUser)
+    const q = query(collectionRef, condition)
      
 
       onSnapshot(q, (snapshot) => {

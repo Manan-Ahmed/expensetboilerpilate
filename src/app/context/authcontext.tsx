@@ -31,7 +31,6 @@ const [user,setUser] = useState<userType | null>(null)
 
 const [id,setId] = useState<string | null>(null)
 
-// const db = getFirestore(app);
 
 useEffect(()=>{
     const auth = getAuth(app);
