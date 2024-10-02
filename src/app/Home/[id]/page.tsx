@@ -10,7 +10,6 @@ import { auth } from "@/app/firebase/firebaseauth";
 import { app } from "@/app/firebase/firebaseconfig";
 import TextArea from "antd/es/input/TextArea";
 import { doc, getFirestore, onSnapshot, updateDoc } from "firebase/firestore";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Button from "antd/es/button"
 
@@ -26,7 +25,6 @@ type ParamType = {
     const [amount,setAmount] = useState('')
     const [category,setCategory] = useState('')
     const [node,setNode] = useState('')
-    const route = useRouter()
 
     const db = getFirestore(app);
 
@@ -39,7 +37,7 @@ useEffect(()=>{
 const docRef = doc(db,'expense',id)
 
 const unsubscribe = onSnapshot(docRef, (doc) => {
-    let data = doc.data()
+    const data = doc.data()
     if(data){
       setTitle(data.title || '')
       setAmount(data.amount || '')

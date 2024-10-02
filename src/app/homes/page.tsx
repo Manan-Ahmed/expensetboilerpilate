@@ -7,7 +7,7 @@ import { doc, deleteDoc } from "firebase/firestore";
 
 import { useRouter } from "next/navigation";
 import { app } from "../firebase/firebaseconfig";
-import { auth, LogOut } from "../firebase/firebaseauth";
+import { auth } from "../firebase/firebaseauth";
 import { MdDelete, MdEdit } from "react-icons/md";
 import AddBtn from "../component/addBtn";
 
@@ -20,7 +20,7 @@ export default function ExpenseList() {
 
 
   useEffect(() => {
-    let detachListner = onAuthStateChanged(auth, (user) => {
+    const detachListner = onAuthStateChanged(auth, (user) => {
       if (user) {
         exp()
 
@@ -59,9 +59,9 @@ export default function ExpenseList() {
     const q = query(collectionRef, condition)
 
     readExpenseRealTime = onSnapshot(q, (snapShot) => {
-      let expenseListClone = []
+      const expenseListClone:DocumentData[] = []
        snapShot.forEach((change)=>{
-        let exp = change.data()
+        const exp = change.data()
         exp.id = change.id
         expenseListClone.push(exp)
         setExpList(expenseListClone)

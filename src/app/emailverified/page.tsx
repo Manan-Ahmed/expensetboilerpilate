@@ -1,30 +1,7 @@
 "use client"
 
-import {getFirestore } from "firebase/firestore";
-
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { UseAuthContext } from "../context/authcontext";
-import { app } from "../firebase/firebaseconfig";
 
 export default function Email(){
-const route = useRouter()
-  const {user} = UseAuthContext()!
-
-
-useEffect(()=>{
-    console.log(user.emailVerified);
-    
-})
-if(user.emailVerified){
-     route.push('/homes')
-
-}
-else{
-  console.log('user is not exist');
-  
-}
-
 
 
 

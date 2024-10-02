@@ -35,19 +35,19 @@ let readExpenseRealTime: Unsubscribe;
 const fetch = ()=>{
 
 
-  let summaryClone = [...expSummary]
+  const summaryClone = [...expSummary]
 
 
 const collectionRef = collection(db, 'expense')
 const currentUser = auth.currentUser?.uid
 
-let condition = where('userUid', '==', currentUser)
+const condition = where('userUid', '==', currentUser)
 const q = query(collectionRef, condition)
 
 readExpenseRealTime = onSnapshot(q, (snapShot) => {
      snapShot.docChanges().forEach((change)=>{
 
-      let exp = change.doc.data()
+      const exp = change.doc.data()
       exp.id = change.doc.id
   summaryClone.push(exp)
   setExpSummary([...summaryClone])

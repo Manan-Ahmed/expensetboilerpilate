@@ -1,4 +1,3 @@
-import { initializeApp } from "firebase/app";
 import { getFirestore,collection, getDocs, doc, setDoc } from "firebase/firestore";
 import { app } from "./firebaseconfig";
 import { auth } from "./firebaseauth";
@@ -51,8 +50,8 @@ const condition = where('userUid','==',currentUser)
 const q = query(collectionRef,condition)
 
 const allExpenseSnapShot = await getDocs(q)
-let allExp = allExpenseSnapShot.docs.map((expSnapShot)=>{
-         let expense = expSnapShot.data()
+const allExp = allExpenseSnapShot.docs.map((expSnapShot)=>{
+         const expense = expSnapShot.data()
          expense.id = expSnapShot.id
          console.log('doc',expSnapShot.id);
          return expense
